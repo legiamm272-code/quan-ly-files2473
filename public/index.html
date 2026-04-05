@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Thống Tải File Bảo Mật</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        .container { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 100%; max-width: 400px; }
+        h2 { color: #333; text-align: center; margin-bottom: 25px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; color: #555; }
+        input { width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; border: none; border-radius: 6px; color: white; font-size: 16px; cursor: pointer; transition: 0.3s; }
+        .btn-reg { background-color: #28a745; }
+        .btn-reg:hover { background-color: #218838; }
+        .btn-down { background-color: #007bff; }
+        .btn-down:hover { background-color: #0069d9; }
+        .divider { border-top: 1px solid #eee; margin: 25px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Yêu Cầu Truy Cập</h2>
+        <form action="/register" method="POST">
+            <label>Họ và tên</label>
+            <input type="text" name="name" placeholder="Nhập tên của bạn" required>
+            <label>Email nhận Key</label>
+            <input type="email" name="email" placeholder="Email để nhận mã" required>
+            <button type="submit" class="btn-reg">Gửi Yêu Cầu Duyệt</button>
+        </form>
+
+        <div class="divider"></div>
+
+        <h2>Tải File Của Bạn</h2>
+        <form action="/download" method="GET">
+            <label>Mã Key được cấp</label>
+            <input type="text" name="key" placeholder="Dán mã Key vào đây" required>
+            <button type="submit" class="btn-down">Bắt Đầu Tải Về</button>
+        </form>
+    </div>
+</body>
+</html>
